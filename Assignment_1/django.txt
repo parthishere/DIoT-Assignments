@@ -1,0 +1,40 @@
+Help on package django:
+
+NAME
+    django
+
+PACKAGE CONTENTS
+    __main__
+    apps (package)
+    conf (package)
+    contrib (package)
+    core (package)
+    db (package)
+    dispatch (package)
+    forms (package)
+    http (package)
+    middleware (package)
+    shortcuts
+    template (package)
+    templatetags (package)
+    test (package)
+    urls (package)
+    utils (package)
+    views (package)
+
+FUNCTIONS
+    setup(set_prefix=True)
+        Configure the settings (this happens as a side effect of accessing the
+        first setting), configure logging and populate the app registry.
+        Set the thread-local urlresolvers script prefix if `set_prefix` is True.
+
+DATA
+    VERSION = (5, 1, 5, 'final', 0)
+
+VERSION
+    5.1.5
+
+FILE
+    /home/parth/Work/All_data/university/DIoT_ECEN5773/Assignments/Assignment_1/.env/lib/python3.12/site-packages/django/__init__.py
+
+

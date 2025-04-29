@@ -1,0 +1,66 @@
+This assignment will give you hands-on experience with machine learning.
+
+In this assignment you will compete in a Kaggle competition:
+
+If you don't already have a kaggle account, Sign up for an account at: https://kaggle.com Links to an external sit
+The competition can be accessed at this URL: https://www.kaggle.com/t/9f9b07a92b05429eaa409858402550b1Links to an external site.
+The essence of this assignment is to create a mutli-class classifier that analyzes captured network traffic to determine if a network access should be labeled "Normal" or is one of several classes of "malicious" accesses, where "malicious" means some kind of unusual or hacker generated attack or attempted access on the network has occurred. You can use scikit-learn with a simple Support Vector Classifier for example, or build a multi-layer neural network with Tensorflow, or both, or as many model types as you choose - the choice is yours. Data on Kaggle is available for training (labeled) and testing (unlabeled) as csv files. You will have to perform all of the steps we've discussed in class:
+
+Load data
+Analyze the training data, determine features to use, potentially create derived features, repair missing values, change symbolic features into numeric values, normalize feature values and remove duplicate samples from the training data, creating "Smart Data" to use for training 
+Construct 1 or more models
+Train your models with the Smart training data. Tweak and adjust your features (feature engineering) and your models
+Create predictions on the test data and produce a solution.csv file with your predictions
+Submit your predictions to the competition and review your results on the Public Leaderboard
+Submission on Canvas
+
+In addition to submitting your csv predictions on Kaggle, you will submit two things on Canvas (by the deadline).
+
+Your code -- if it's a single file, you can upload the file directly (it can be python, a jupyter notebook, whatever you used).  Otherwise, submit a zip file.
+Your Kaggle User Name (what is shown in the leader board, so I can see the score).  Put this as a comment for your submission.
+The Kaggle competition has a limit of 20 solution file submissions per user per day over the duration of the assignment.  Note: you can use whatever coding environment you'd like (vscode, kaggle's own, Googles colab).
+
+Final Scoring and Letter Grade:
+
+Your letter grade on this assignment is calculated as follows:
+combined_score = (0.3 * Public_Score) + (0.7 * Private_Score)
+
+The combined_score is then scaled to a point on a line defined by 2 points:
+(x1, y1) = (0.199, 0.7) and,
+(x2, y2) = (1.0, 1.0)
+where y1=0.7 maps to a C- letter grade, and y2=1.0 maps to an A letter grade.
+
+Score mapping graph.png
+
+
+If you don't make any submissions, or a submission has formatting errors and cannot be scored by Kaggle, you will receive a combined_score of 0, both of which map to an F letter grade.
+
+See the Kaggle Competition, Overview tab to see more information.
+
+Helpful links for Kaggle:
+
+https://www.kaggle.com/getting-started
+
+Links to an external site.https://www.kaggle.com/docs/datasets#using-datasets
+
+Links to an external site.Kaggle support videos on YouTube: https://www.youtube.com/playlist?list=PLqFaTIg4myu8gbDh6oBl7XRYNBlthpDEW
+
+Links to an external site.
+
+Other helpful links:
+
+Numpy : https://www.tutorialspoint.com/numpy/index.htm
+
+Links to an external sitePandas : https://pandas.pydata.org/docs/getting_started/index.html
+
+Links to an external site.Scikit-learn : https://scikit-learn.org/stable/index.html
+
+Links to an external siteKeras (Tensorflow) : https://keras.io
+
+Links to an external site.
+
+Rules:
+
+Students should create their own work. All University Honor Code rules are in effect. Do not share your python notebook(s), code or solution files with any student or anyone else. And most important: Have fun!
+
+Feel free to ask questions on Piazza.  Don't post code, unless it's in a private message to me. 
