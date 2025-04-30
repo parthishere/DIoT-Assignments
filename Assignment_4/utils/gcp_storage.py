@@ -9,8 +9,6 @@ import os
 5) Download JSON credentials file
 """
 
-
-# Set credentials
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./utils/service_account.json"
 
 def upload_blob(bucket_name, source_file_name, destination_blob_name):

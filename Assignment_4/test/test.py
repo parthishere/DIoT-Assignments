@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 # Configuration
-BASE_URL = "http://35.202.18.79:8000"  # Change to your VM's IP address
+BASE_URL = "http://35.202.18.79:80"  
 UPLOAD_ENDPOINT = f"{BASE_URL}/api/model/upload"
 PREDICT_ENDPOINT = f"{BASE_URL}/api/predict"
 DOWNLOAD_ENDPOINT = f"{BASE_URL}/api/model/download"
@@ -18,7 +18,7 @@ def test_local_model():
     print("Training local model...")
     
     # Load and prepare the data
-    df = pd.read_csv('../models/data_K_Means_Clustering.csv')  # Replace with your dataset path
+    df = pd.read_csv('../models/data_K_Means_Clustering.csv')  
     X = df[['x', 'y']].values  # Extract features (x, y coordinates)
     
     # Train K-means model
@@ -30,7 +30,7 @@ def test_local_model():
     joblib.dump(kmeans, model_path)
     print(f"Model saved to {model_path}")
     
-    # Visualize the clusters (optional)
+    # Visualize the clusters
     plt.figure(figsize=(8, 6))
     plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_, cmap='viridis', s=50, alpha=0.8)
     plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], 
@@ -61,13 +61,13 @@ def test_upload_model(model_path):
         print(f"Response JSON: {json_response}")
         
         if response.status_code == 200:
-            print("✅ Model upload successful")
+            print("[+] Model upload successful")
             return True
         else:
-            print("❌ Model upload failed")
+            print("[-] Model upload failed")
             return False
     except requests.exceptions.JSONDecodeError:
-        print("❌ Response is not valid JSON")
+        print("[-] Response is not valid JSON")
         return False
 
 def test_predict(sample_points):
@@ -92,9 +92,9 @@ def test_predict(sample_points):
         print(f"Response: {response.json()}")
         
         if response.status_code == 200:
-            print(f"✅ Prediction successful - Cluster: {response.json().get('prediction')}")
+            print(f"[+] Prediction successful - Cluster: {response.json().get('prediction')}")
         else:
-            print("❌ Prediction failed")
+            print("[-] Prediction failed")
 
 def test_download_model():
     """Test the model download API endpoint"""
@@ -111,7 +111,7 @@ def test_download_model():
         with open(downloaded_model_path, 'wb') as f:
             f.write(response.content)
         
-        print(f"✅ Model download successful - Saved to {downloaded_model_path}")
+        print(f"[+] Model download successful - Saved to {downloaded_model_path}")
         
         # Verify the model works
         try:
@@ -119,10 +119,10 @@ def test_download_model():
             print(f"Model loaded successfully: {type(model)}")
             return True
         except Exception as e:
-            print(f"❌ Error loading downloaded model: {str(e)}")
+            print(f"[-] Error loading downloaded model: {str(e)}")
             return False
     else:
-        print("❌ Model download failed")
+        print("[-] Model download failed")
         if hasattr(response, 'json'):
             try:
                 print(f"Error: {response.json()}")
@@ -154,11 +154,11 @@ def main():
         download_success = test_download_model()
         
         if download_success:
-            print("\n✅ All API tests completed successfully")
+            print("\n[+] All API tests completed successfully")
         else:
-            print("\n⚠️ Download test failed, but upload and predict tests completed")
+            print("\n[~] Download test failed, but upload and predict tests completed")
     else:
-        print("\n❌ Upload test failed, skipping prediction and download tests")
+        print("\n[-] Upload test failed, skipping prediction and download tests")
 
 if __name__ == "__main__":
     main()

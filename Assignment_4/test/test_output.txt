@@ -4,31 +4,31 @@ Model saved to kmeans_model.joblib
 
 Testing model upload API...
 Status code: 200
-Response text: {"model_id":"3ca2d7f2-e2f2-4c65-bab0-1fd0b735d9bc","success":true}
+Response text: {"model_id":"4a509514-58ae-414d-b92b-3b21895be7e1","success":true}
 ...
-Response JSON: {'model_id': '3ca2d7f2-e2f2-4c65-bab0-1fd0b735d9bc', 'success': True}
-✅ Model upload successful
+Response JSON: {'model_id': '4a509514-58ae-414d-b92b-3b21895be7e1', 'success': True}
+[+] Model upload successful
 
 Testing prediction API...
 
 Sample 1 - Point [-8.5 -5.6]:
 Status code: 200
 Response: {'prediction': 2}
-✅ Prediction successful - Cluster: 2
+[+] Prediction successful - Cluster: 2
 
 Sample 2 - Point [-11.  -9.]:
 Status code: 200
 Response: {'prediction': 2}
-✅ Prediction successful - Cluster: 2
+[+] Prediction successful - Cluster: 2
 
 Sample 3 - Point [-1.7 10.5]:
 Status code: 200
 Response: {'prediction': 1}
-✅ Prediction successful - Cluster: 1
+[+] Prediction successful - Cluster: 1
 
 Testing model download API...
 Status code: 200
-✅ Model download successful - Saved to downloaded_model.joblib
+[+] Model download successful - Saved to downloaded_model.joblib
 Model loaded successfully: <class 'sklearn.cluster._kmeans.KMeans'>
 
-✅ All API tests completed successfully
+[+] All API tests completed successfully

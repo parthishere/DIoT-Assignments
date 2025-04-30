@@ -409,40 +409,6 @@ ml-model-api/
    sudo systemctl restart nginx
    ```
 
-3. **Create a systemd service for your application**:
-   ```bash
-   sudo nano /etc/systemd/system/model-api.service
-   ```
-
-   Add the following configuration:
-   ```
-   [Unit]
-   Description=ML Model API Service
-   After=network.target
-
-   [Service]
-   User=your-username
-   WorkingDirectory=/home/your-username/ml-model-api
-   ExecStart=/home/your-username/ml-model-api/venv/bin/gunicorn -b 127.0.0.1:8000 app:app
-   Restart=always
-
-   [Install]
-   WantedBy=multi-user.target
-   ```
-
-   Replace `your-username` with your actual username.
-
-4. **Enable and start the service**:
-   ```bash
-   sudo systemctl daemon-reload
-   sudo systemctl enable model-api
-   sudo systemctl start model-api
-   ```
-
-5. **Check service status**:
-   ```bash
-   sudo systemctl status model-api
-   ```
 
 ## Testing the API
 
