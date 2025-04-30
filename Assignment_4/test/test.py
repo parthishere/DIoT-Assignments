@@ -43,6 +43,7 @@ def test_local_model():
     
     return model_path
 
+
 def test_upload_model(model_path):
     """Test the model upload API endpoint"""
     print("\nTesting model upload API...")
@@ -53,15 +54,21 @@ def test_upload_model(model_path):
         response = requests.post(UPLOAD_ENDPOINT, files=files)
     
     print(f"Status code: {response.status_code}")
-    print(f"Response: {response.json()}")
+    print(f"Response text: {response.text[:200]}...")  # Print first 200 chars of response
     
-    if response.status_code == 200:
-        print("✅ Model upload successful")
-        return True
-    else:
-        print("❌ Model upload failed")
+    try:
+        json_response = response.json()
+        print(f"Response JSON: {json_response}")
+        
+        if response.status_code == 200:
+            print("✅ Model upload successful")
+            return True
+        else:
+            print("❌ Model upload failed")
+            return False
+    except requests.exceptions.JSONDecodeError:
+        print("❌ Response is not valid JSON")
         return False
-
 
 def test_predict(sample_points):
     """Test the prediction API endpoint with multiple samples"""
