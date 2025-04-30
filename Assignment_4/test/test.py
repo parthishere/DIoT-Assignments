@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 # Configuration
-BASE_URL = "http://35.202.18.79"  # Change to your VM's IP address
+BASE_URL = "http://35.202.18.79:8000"  # Change to your VM's IP address
 UPLOAD_ENDPOINT = f"{BASE_URL}/api/model/upload"
 PREDICT_ENDPOINT = f"{BASE_URL}/api/predict"
 DOWNLOAD_ENDPOINT = f"{BASE_URL}/api/model/download"
