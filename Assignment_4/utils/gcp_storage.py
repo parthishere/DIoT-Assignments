@@ -11,7 +11,7 @@ import os
 
 
 # Set credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./credentials.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./service_account.json"
 
 def upload_blob(bucket_name, source_file_name, destination_blob_name):
     """Uploads a file to the bucket."""
