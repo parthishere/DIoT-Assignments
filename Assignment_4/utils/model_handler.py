@@ -1,8 +1,8 @@
-import numpy as np
 import joblib
+import numpy as np
 
 def load_model(model_path):
-    """Load a TensorFlow model."""
+    """Load a joblib model."""
     try:
         model = joblib.load(model_path)
         return model
@@ -27,11 +27,13 @@ def predict(model, data):
 
 def preprocess_input(data):
     """Preprocess input data for model."""
+    # For K-means clustering, we need x and y coordinates
     input_array = np.array(data['features']).reshape(1, -1)
     return input_array
 
 def postprocess_output(prediction):
     """Process model output to return readable results."""
-    class_idx = np.argmax(prediction, axis=1)[0]
-    class_names = ['class1', 'class2', 'class3'] 
-    return class_names[class_idx]
+    # For K-means, the prediction is directly the cluster number (an integer)
+    # No need for argmax since K-means.predict() already returns the cluster index
+    cluster_id = int(prediction[0])
+    return cluster_id

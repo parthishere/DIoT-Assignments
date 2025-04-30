@@ -1,2 +1,2 @@
 flask
-google-cloude-storage
+google-cloud-storage
